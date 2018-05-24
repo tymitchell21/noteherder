@@ -1,9 +1,8 @@
 // Initialize Firebase
 import Rebase from 're-base'
-import firebase from 'firebase/app'
-import database from 'firebase/database'
+import firebase from 'firebase'
 
-const app = firebase.initializeApp({
+const app = firebase.initializeApp ({
     apiKey: "AIzaSyDCGvWmUdH2TbUqh03J-oL0mlpQAIZ_qNw",
     authDomain: "noteherder-67dfc.firebaseapp.com",
     databaseURL: "https://noteherder-67dfc.firebaseio.com",
