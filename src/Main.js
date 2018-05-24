@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
+import base from './firebase.js'
 
 class Main extends Component {
   constructor() {
@@ -11,6 +12,14 @@ class Main extends Component {
       currentNote: this.blankNote(),
       notes: [],
     }
+  }
+
+  componentWillMount(){
+    base.syncState('Notes', {
+      context: this,
+      state: 'notes',
+      asArray: true,
+    })
   }
 
   blankNote = () => {
